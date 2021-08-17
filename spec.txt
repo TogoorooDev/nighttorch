@@ -1,0 +1,30 @@
+Nighttorch Protocol Version 1 Specification:
+
+==> Signal List
+
+=> Echo Signal
+
+NT ECHO\n
+
+This signal is a test signal. Should be removed and replace with Ping Signal.
+
+=> Ping Signal
+
+NT ALIVE\n[Protocol version: byte]\n
+
+This signal specifies a server is alive. Used during network building. If 
+[Protocol version] is higher the highest 
+
+=> Superseded Signal
+
+NT SUPERSEDED\n[Protocol Version: byte]\n
+
+This signal alerts that the nighttorch protocol version is too high. It sends the protcol
+version it implemented, or the higher available one if it has compatibility with multiple
+specifications (encoded in [Protocol Version]).
+
+=> Outdated Signal
+
+NT OUTDATED\n[Minimum Supported Protocol: byte]\n[Maximum Supported Protocol:byte]\n
+
+This signal is like the Superseded, however it specifies the 
